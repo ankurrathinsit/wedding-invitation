@@ -177,12 +177,17 @@ if (!prefersReducedMotion) {
     '<circle cx="60" cy="107" r="3.5" fill="#3a567f"/>' +
     "</svg>";
 
+  const teddyLayer = document.createElement("div");
+  teddyLayer.className = "teddy-layer";
+  teddyLayer.setAttribute("aria-hidden", "true");
+  document.body.appendChild(teddyLayer);
+
   function makeTeddy(side, svg) {
     const teddy = document.createElement("div");
     teddy.className = "teddy teddy--" + side;
     teddy.setAttribute("aria-hidden", "true");
     teddy.innerHTML = svg;
-    document.body.appendChild(teddy);
+    teddyLayer.appendChild(teddy);
     return teddy;
   }
 

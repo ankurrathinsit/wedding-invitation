@@ -339,11 +339,17 @@ h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; font-weight: 600; 
 .footer__btn { margin-top: 1.8rem; }
 
 /* ===== Peeking teddies (a smiling pair; peeks driven from JS) ===== */
-.teddy {
+.teddy-layer {
   position: fixed;
+  inset: 0;
+  overflow: hidden; /* clips off-screen teddies so they never cause sideways scroll */
+  z-index: 20;
+  pointer-events: none;
+}
+.teddy {
+  position: absolute;
   bottom: 18vh;
   width: clamp(96px, 13vw, 150px);
-  z-index: 20;
   pointer-events: none;
 }
 .teddy svg {
