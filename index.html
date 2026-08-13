@@ -17,91 +17,90 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Floating hearts layer (decorative) -->
+  <!-- Floating hearts layer (used by the button burst) -->
   <div class="hearts" id="hearts" aria-hidden="true"></div>
 
-  <!-- HERO -->
-  <header class="hero">
+  <!-- PART 1 · INTRO -->
+  <header class="hero panel" id="intro">
     <div class="hero__inner">
-      <p class="hero__eyebrow">We're Engaged</p>
+      <img class="hero__ganesha" src="assets/heading2realpng.png" alt="Shri Ganesha" />
+      <p class="hero__eyebrow">&#128141; We're Engaged!</p>
       <h1 class="hero__names">
         Ankur <span class="amp">&amp;</span> Anjali
       </h1>
-      <p class="hero__date">Sunday, August 16, 2026</p>
-      <a class="scroll-cue" href="#invite" aria-label="Scroll to invitation">
-        <span></span>
-      </a>
-    </div>
-  </header>
+      <p class="hero__date">Sunday, August 16, 2026 &middot; 10:00 AM</p>
+    </div>  </header>
 
-  <main>
-    <!-- COUNTDOWN -->
-    <section class="section countdown reveal" id="countdown" aria-label="Countdown">
-      <h2 class="section__title">Counting down to the big day</h2>
-      <div class="countdown__grid" id="countdown-grid">
-        <!-- populated by script.js -->
-      </div>
-    </section>
+  <!-- PART 2 · COUNTDOWN + INVITATION -->
+  <section class="panel" id="story">
+    <div class="panel__content">
+      <section class="section countdown reveal" id="countdown" aria-label="Countdown">
+        <h2 class="section__title">Counting down to the big day</h2>
+        <div class="countdown__grid" id="countdown-grid">
+          <!-- populated by script.js -->
+        </div>
+      </section>
 
-    <!-- INVITATION -->
-    <section class="section invite reveal" id="invite">
-      <div class="card">
-        <div class="card__flourish" aria-hidden="true">&#10086;</div>
-        <h2 class="section__title">You're Invited</h2>
-        <p class="invite__message">
-          [Write your invitation message here &mdash; e.g. "With hearts full of joy, we
-          invite you to join us as we celebrate our engagement. Come share an evening of
-          love, laughter, and a little bit of magic. We can't wait to celebrate with you!"]
+      <section class="section invite reveal" id="invite">
+        <div class="card">
+          <div class="card__flourish" aria-hidden="true">&#10086;</div>
+          <h2 class="section__title">You're Invited</h2>
+          <p class="invite__message">
+            We are thrilled to invite you to our engagement celebration!
+            Join us for a day filled with love, laughter, and cherished memories as we mark the beginning of our journey together.
+            Your presence will make our special day even more memorable.
+          </p>
+        </div>
+      </section>
+    </div>  </section>
+
+  <!-- PART 3 · VENUE + CELEBRATION -->
+  <section class="panel" id="venue">
+    <div class="panel__content">
+      <section class="section details reveal" id="details">
+        <div class="detail">
+          <span class="detail__icon" aria-hidden="true">&#128197;</span>
+          <h3>When</h3>
+          <p>Sunday, August 16, 2026<br />10:00 AM onwards</p>
+        </div>
+        <div class="detail">
+          <span class="detail__icon" aria-hidden="true">&#128205;</span>
+          <h3>Where</h3>
+          <p>Regalia Eden<br />Palam Village, Dwarka, New Delhi 110075</p>
+        </div>
+      </section>
+
+      <section class="section map reveal" id="map">
+        <h2 class="section__title">Find Your Way</h2>
+        <div class="map__frame">
+          <iframe
+            title="Venue location map"
+            src="https://www.google.com/maps?q=Regalia+Eden,+Palam+Village,+Dwarka,+New+Delhi,+110075&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <a
+            class="map__overlay"
+            href="https://maps.app.goo.gl/AcrX69XC66Xgdiyt9?g_st=ac"
+            target="_blank"
+            rel="noopener"
+            aria-label="Open venue location in Google Maps"
+          ></a>
+        </div>
+        <p class="map__cta">
+          <a class="map__btn" href="https://maps.app.goo.gl/AcrX69XC66Xgdiyt9?g_st=ac" target="_blank" rel="noopener">&#128205; Open in Google Maps</a>
         </p>
-      </div>
-    </section>
+      </section>
 
-    <!-- DETAILS -->
-    <section class="section details reveal" id="details">
-      <div class="detail">
-        <span class="detail__icon" aria-hidden="true">&#128197;</span>
-        <h3>When</h3>
-        <p>Sunday, August 16, 2026<br />10:00 AM onwards</p>
-      </div>
-      <div class="detail">
-        <span class="detail__icon" aria-hidden="true">&#128205;</span>
-        <h3>Where</h3>
-        <p>Regalia Eden<br />Palam Village, Dwarka, New Delhi 110075</p>
-      </div>    </section>
+    </div>  </section>
 
-    <!-- MAP -->
-    <section class="section map reveal" id="map">
-      <h2 class="section__title">Find Your Way</h2>
-      <div class="map__frame">
-        <iframe
-          title="Venue location map"
-          src="https://www.google.com/maps?q=Regalia+Eden,+Palam+Village,+Dwarka,+New+Delhi,+110075&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-        <a
-          class="map__overlay"
-          href="https://maps.app.goo.gl/AcrX69XC66Xgdiyt9?g_st=ac"
-          target="_blank"
-          rel="noopener"
-          aria-label="Open venue location in Google Maps"
-        ></a>
-      </div>
-      <p class="map__cta">
-        <a class="map__btn" href="https://maps.app.goo.gl/AcrX69XC66Xgdiyt9?g_st=ac" target="_blank" rel="noopener">&#128205; Open in Google Maps</a>
-      </p>
-    </section>
-
-    <!-- FUN -->
-    <section class="section fun reveal">
-      <p class="fun__text">Tap for a little celebration &#127881;</p>
-      <button class="btn" id="heart-btn" type="button">Shower us with love &#128149;</button>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p class="footer__with">With all our love,</p>
+  <!-- END -->
+  <footer class="footer panel--end" id="end">
+    <div class="footer__flourish" aria-hidden="true">&#10086;</div>
+    <p class="footer__with">With love and blessings,</p>
     <p class="footer__names">Ankur &amp; Anjali</p>
+    <p class="footer__see">We can't wait to celebrate with you!<br />Sunday, 16 August 2026 &middot; 10:00 AM<br />Regalia Eden, Dwarka, New Delhi</p>
+    <button class="btn footer__btn" id="heart-btn" type="button">Click to shower us with love &#128149;</button>
   </footer>
 
   <script src="script.js"></script>
