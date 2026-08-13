@@ -193,19 +193,23 @@ if (!prefersReducedMotion) {
 
   // One peek: slide in from the edge, a little wave, slide back out.
   function peekKeyframes(side) {
-    const hidden = side === "left" ? "translateX(-130%)" : "translateX(130%)";
-    const inPos = side === "left" ? "translateX(-8%)" : "translateX(8%)";
-    const settle = side === "left" ? "translateX(-16%)" : "translateX(16%)";
-    const rH = side === "left" ? "rotate(-12deg)" : "rotate(12deg)";
-    const rI = side === "left" ? "rotate(6deg)" : "rotate(-6deg)";
-    const rS = side === "left" ? "rotate(-2deg)" : "rotate(2deg)";
+    if (side === "top") {
+      return [
+        { transform: "translateY(-135%) rotate(8deg)" },
+        { transform: "translateY(-12%) rotate(-5deg)", offset: 0.2 },
+        { transform: "translateY(-22%) rotate(3deg)", offset: 0.36 },
+        { transform: "translateY(-12%) rotate(-5deg)", offset: 0.52 },
+        { transform: "translateY(-22%) rotate(3deg)", offset: 0.68 },
+        { transform: "translateY(-135%) rotate(8deg)" },
+      ];
+    }
     return [
-      { transform: hidden + " " + rH },
-      { transform: inPos + " " + rI, offset: 0.2 },
-      { transform: settle + " " + rS, offset: 0.36 },
-      { transform: inPos + " " + rI, offset: 0.52 },
-      { transform: settle + " " + rS, offset: 0.68 },
-      { transform: hidden + " " + rH },
+      { transform: "translateX(-130%) rotate(-12deg)" },
+      { transform: "translateX(-8%) rotate(6deg)", offset: 0.2 },
+      { transform: "translateX(-16%) rotate(-2deg)", offset: 0.36 },
+      { transform: "translateX(-8%) rotate(6deg)", offset: 0.52 },
+      { transform: "translateX(-16%) rotate(-2deg)", offset: 0.68 },
+      { transform: "translateX(-130%) rotate(-12deg)" },
     ];
   }
 
@@ -213,7 +217,11 @@ if (!prefersReducedMotion) {
   function loopPeek(teddy, side) {
     const gap = 2500 + Math.random() * 2000; // 2.5–8.5s between peeks
     setTimeout(() => {
-      teddy.style.bottom = 10 + Math.random() * 55 + "vh"; // vary the peek height
+      if (side === "top") {
+        teddy.style.left = 10 + Math.random() * 50 + "%"; // vary horizontal spot
+      } else {
+        teddy.style.bottom = 10 + Math.random() * 55 + "vh"; // vary the peek height
+      }
       const anim = teddy.animate(peekKeyframes(side), {
         duration: 3000 + Math.random() * 1200,
         easing: "ease-in-out",
@@ -223,7 +231,7 @@ if (!prefersReducedMotion) {
   }
 
   const leftTeddy = makeTeddy("left", TEDDY_FEMALE);
-  const rightTeddy = makeTeddy("right", TEDDY_MALE);
+  const topTeddy = makeTeddy("top", TEDDY_MALE);
   loopPeek(leftTeddy, "left");
-  loopPeek(rightTeddy, "right");
+  loopPeek(topTeddy, "top");
 }

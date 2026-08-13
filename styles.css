@@ -364,10 +364,12 @@ h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; font-weight: 600; 
   transform-origin: bottom right;
   transform: translateX(-130%);
 }
-.teddy--right {
-  right: 0;
-  transform-origin: bottom left;
-  transform: translateX(130%);
+.teddy--top {
+  top: 0;
+  bottom: auto;
+  left: 40%;
+  transform-origin: top center;
+  transform: translateY(-135%);
 }
 
 /* ===== Short viewports (landscape phones, small devices) — keep panels tidy ===== */
